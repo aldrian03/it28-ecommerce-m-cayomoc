@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        nav {
+            background-color: #694300;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        td img {
+            max-width: 80px;
+            max-height: 80px;
+            display: block;
+            margin: 0 auto;
+        }
+        .buy-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .buy-btn:hover {
+            background-color: #45a049;
+        }
+        .totals {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        @media screen and (max-width: 600px) {
+            nav {
+                padding: 10px;
+            }
+            nav a {
+                margin-right: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            table {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#product_inventory">Product Inventory</a>
+        <a href="#payment_accounting">Payment & Accounting</a>
+        <a href="#logistics">Logistics</a>
+        <a href="#customer_services">Customer Services</a>
+        <a href="#reports">Reports</a>
+    </nav>
+
+    <div class="container">
+        <section id="product_inventory">
+            <h1>YORME's KAKANIN</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Stock Quantity</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Puto Bumbong</td>
+                        <td>₱50 per piece</td>
+                        <td>100</td>
+                        <td><img src="https://example.com/puto-bumbong-image.jpg" alt="Puto Bumbong Image"></td>
+                        <td><button class="buy-btn" onclick="addToCart(1, 'Puto Bumbong', 50)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bibingka</td>
+                        <td>₱80 per piece</td>
+                        <td>150</td>
+                        <td><img src="https://example.com/bibingka-image.jpg" alt="Bibingka Image"></td>
+                        <td><button class="buy-btn" onclick="addToCart(2, 'Bibingka', 80)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Pastillas</td>
+                        <td>₱30 per pack</td>
+                        <td>200</td>
+                        <td><img src="https://example.com/pastillas-image.jpg" alt="Pastillas Image"></td>
+                        <td><button class="buy-btn" onclick="addToCart(3, 'Pastillas', 30)">Buy</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Puto Cheese</td>
+                        <td>₱60 per piece</td>
+                        <td>120</td>
+                        <td><img src="https://example.com/puto-cheese-image.jpg" alt="Puto Cheese Image"></td>
+                        <td><button class="buy-btn" onclick="addToCart(4, 'Puto Cheese', 60)">Buy</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="totals" id="totals"></div>
+        </section>
+
+        <section id="payment_accounting">
+            <!-- Add content for Payment & Accounting section -->
+        </section>
+
+        <section id="logistics">
+            <!-- Add content for Logistics section -->
+        </section>
+
+        <section id="customer_services">
+            <!-- Add content for Customer Services section -->
+        </section>
+
+        <section id="reports">
+            <!-- Add content for Reports section -->
+        </section>
+    </div>
+
+    <script>
+        let totalQuantity = 0;
+        let totalPrice = 0;
+
+        function addToCart(productId, productName, price) {
+            totalQuantity++;
+            totalPrice += price;
+            document.getElementById('totals').innerText = `Total Quantity: ${totalQuantity}, Total Price: ₱${totalPrice}`;
+        }
+    </script>
+</body>
+</html>
